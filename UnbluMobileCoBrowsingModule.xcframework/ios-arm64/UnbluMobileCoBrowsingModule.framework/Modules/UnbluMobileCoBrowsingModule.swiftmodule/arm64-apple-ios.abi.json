@@ -1,0 +1,2289 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UnbluMobileCoBrowsingModuleProvider",
+        "printedName": "UnbluMobileCoBrowsingModuleProvider",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "create",
+            "printedName": "create(config:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingModuleApi",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingModuleConfiguration",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleConfiguration",
+                "hasDefaultArg": true,
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE13ConfigurationV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8ProviderC6create6configAA0abcdE3Api_pAA0abcdE13ConfigurationV_tFZ",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE8ProviderC6create6configAA0abcdE3Api_pAA0abcdE13ConfigurationV_tFZ",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8ProviderC",
+        "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE8ProviderC",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UnbluMobileCoBrowsingModuleApi",
+        "printedName": "UnbluMobileCoBrowsingModuleApi",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnbluMobileCoBrowsingModuleDelegate",
+                    "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate",
+                    "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvp",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvp",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UnbluMobileCoBrowsingModuleDelegate",
+                        "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate",
+                        "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvg",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvg",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UnbluMobileCoBrowsingModuleDelegate",
+                        "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate",
+                        "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvs",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvs",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvM",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP8delegateAA0abcdE8Delegate_pSgvM",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maxWindowCapturingLevel",
+            "printedName": "maxWindowCapturingLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Level",
+                "printedName": "UIKit.UIWindow.Level",
+                "usr": "c:@T@UIWindowLevel"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avp",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avp",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Level",
+                    "printedName": "UIKit.UIWindow.Level",
+                    "usr": "c:@T@UIWindowLevel"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avg",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avg",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Level",
+                    "printedName": "UIKit.UIWindow.Level",
+                    "usr": "c:@T@UIWindowLevel"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avs",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avs",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avM",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23maxWindowCapturingLevelSo08UIWindowJ0avM",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "preferredStatusBarStyle",
+            "printedName": "preferredStatusBarStyle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIStatusBarStyle",
+                "printedName": "UIKit.UIStatusBarStyle",
+                "usr": "c:@E@UIStatusBarStyle"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0Vvp",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0Vvp",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIStatusBarStyle",
+                    "printedName": "UIKit.UIStatusBarStyle",
+                    "usr": "c:@E@UIStatusBarStyle"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0Vvg",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0Vvg",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIStatusBarStyle",
+                    "printedName": "UIKit.UIStatusBarStyle",
+                    "usr": "c:@E@UIStatusBarStyle"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0Vvs",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0Vvs",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0VvM",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP23preferredStatusBarStyleSo08UIStatusiJ0VvM",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "isMobileCoBrowsingActive",
+            "printedName": "isMobileCoBrowsingActive(success:failure:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UnbluIsMobileCoBrowsingActiveError",
+                        "printedName": "UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError",
+                        "usr": "s:12UnbluCoreSDK0A29IsMobileCoBrowsingActiveErrorO"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP02isbcD6Active7success7failureyySbc_y0A7CoreSDK0a2IsbcdH5ErrorOcSgtF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP02isbcD6Active7success7failureyySbc_y0A7CoreSDK0a2IsbcdH5ErrorOcSgtF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopMobileCoBrowsing",
+            "printedName": "stopMobileCoBrowsing(success:failure:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((UnbluCoreSDK.UnbluStopMobileCoBrowsingError) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(UnbluCoreSDK.UnbluStopMobileCoBrowsingError) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UnbluStopMobileCoBrowsingError",
+                        "printedName": "UnbluCoreSDK.UnbluStopMobileCoBrowsingError",
+                        "usr": "s:12UnbluCoreSDK0A25StopMobileCoBrowsingErrorO"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP04stopbcD07success7failureyyyc_y0A7CoreSDK0a4StopbcD5ErrorOcSgtF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP04stopbcD07success7failureyyyc_y0A7CoreSDK0a4StopbcD5ErrorOcSgtF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addPrivateView",
+            "printedName": "addPrivateView(withTag:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP14addPrivateView7withTagySi_tF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP14addPrivateView7withTagySi_tF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removePrivateView",
+            "printedName": "removePrivateView(withTag:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP17removePrivateView7withTagySi_tF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP17removePrivateView7withTagySi_tF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addPrivateArea",
+            "printedName": "addPrivateArea(withId:x:y:width:height:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingPrivateArea",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingPrivateArea",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP14addPrivateArea6withId1x1y5width6heightAA0abcdhI0CSS_14CoreFoundation7CGFloatVSgA3OtF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP14addPrivateArea6withId1x1y5width6heightAA0abcdhI0CSS_12CoreGraphics7CGFloatVSgA3OtF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "removePrivateArea",
+            "printedName": "removePrivateArea(withId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP17removePrivateArea6withIdySS_tF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP17removePrivateArea6withIdySS_tF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "isMobileCoBrowsingActive",
+            "printedName": "isMobileCoBrowsingActive(success:failure:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Bool) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UnbluIsMobileCoBrowsingActiveError",
+                        "printedName": "UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError",
+                        "usr": "s:12UnbluCoreSDK0A29IsMobileCoBrowsingActiveErrorO"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiPAAE02isbcD6Active7success7failureyySbc_y0A7CoreSDK0a2IsbcdH5ErrorOcSgtF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiPAAE02isbcD6Active7success7failureyySbc_y0A7CoreSDK0a2IsbcdH5ErrorOcSgtF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "stopMobileCoBrowsing",
+            "printedName": "stopMobileCoBrowsing(success:failure:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((UnbluCoreSDK.UnbluStopMobileCoBrowsingError) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(UnbluCoreSDK.UnbluStopMobileCoBrowsingError) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UnbluStopMobileCoBrowsingError",
+                        "printedName": "UnbluCoreSDK.UnbluStopMobileCoBrowsingError",
+                        "usr": "s:12UnbluCoreSDK0A25StopMobileCoBrowsingErrorO"
+                      }
+                    ]
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiPAAE04stopbcD07success7failureyyyc_y0A7CoreSDK0a4StopbcD5ErrorOcSgtF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiPAAE04stopbcD07success7failureyyyc_y0A7CoreSDK0a4StopbcD5ErrorOcSgtF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP",
+        "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE3ApiP",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "genericSig": "<τ_0_0 : UnbluCoreSDK.UnbluModule>",
+        "sugared_genericSig": "<Self : UnbluCoreSDK.UnbluModule>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "UnbluModule",
+            "printedName": "UnbluModule",
+            "usr": "s:12UnbluCoreSDK0A6ModuleP",
+            "mangledName": "$s12UnbluCoreSDK0A6ModuleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UnbluMobileCoBrowsingModuleDelegate",
+        "printedName": "UnbluMobileCoBrowsingModuleDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "unbluMobileCoBrowsingModuleDidStartCoBrowsing",
+            "printedName": "unbluMobileCoBrowsingModuleDidStartCoBrowsing(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingModuleApi",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegateP05unblubcde8DidStartcD0yyAA0abcdE3Api_pF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE8DelegateP05unblubcde8DidStartcD0yyAA0abcdE3Api_pF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unbluMobileCoBrowsingModuleDidStopCoBrowsing",
+            "printedName": "unbluMobileCoBrowsingModuleDidStopCoBrowsing(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingModuleApi",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegateP05unblubcde7DidStopcD0yyAA0abcdE3Api_pF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE8DelegateP05unblubcde7DidStopcD0yyAA0abcdE3Api_pF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unbluMobileCoBrowsingModuleDidStartCoBrowsing",
+            "printedName": "unbluMobileCoBrowsingModuleDidStartCoBrowsing(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingModuleApi",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegatePAAE05unblubcde8DidStartcD0yyAA0abcdE3Api_pF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE8DelegatePAAE05unblubcde8DidStartcD0yyAA0abcdE3Api_pF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "unbluMobileCoBrowsingModuleDidStopCoBrowsing",
+            "printedName": "unbluMobileCoBrowsingModuleDidStopCoBrowsing(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingModuleApi",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleApi",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE3ApiP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegatePAAE05unblubcde7DidStopcD0yyAA0abcdE3Api_pF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE8DelegatePAAE05unblubcde7DidStopcD0yyAA0abcdE3Api_pF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "genericSig": "<τ_0_0 where τ_0_0 : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "sugared_genericSig": "<Self where Self : UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:27UnbluMobileCoBrowsingModule0abcdE8DelegateP",
+        "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE8DelegateP",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UnbluMobileCoBrowsingPrivateArea",
+        "printedName": "UnbluMobileCoBrowsingPrivateArea",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "id",
+            "printedName": "id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC2idSSvp",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC2idSSvp",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC2idSSvg",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC2idSSvg",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "rect",
+            "printedName": "rect",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CGRect",
+                "printedName": "CoreFoundation.CGRect",
+                "usr": "c:@S@CGRect"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC4rectSo6CGRectVvp",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC4rectSo6CGRectVvp",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGRect",
+                    "printedName": "CoreFoundation.CGRect",
+                    "usr": "c:@S@CGRect"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC4rectSo6CGRectVvg",
+                "mangledName": "$s27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC4rectSo6CGRectVvg",
+                "moduleName": "UnbluMobileCoBrowsingModule",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "update",
+            "printedName": "update(x:y:width:height:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CoreGraphics.CGFloat?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CGFloat",
+                    "printedName": "CoreGraphics.CGFloat",
+                    "usr": "s:14CoreFoundation7CGFloatV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC6update1x1y5width6heighty14CoreFoundation7CGFloatVSg_A3LtF",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC6update1x1y5width6heighty12CoreGraphics7CGFloatVSg_A3LtF",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC",
+        "mangledName": "$s27UnbluMobileCoBrowsingModule0abcD11PrivateAreaC",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UnbluMobileCoBrowsingModuleConfiguration",
+        "printedName": "UnbluMobileCoBrowsingModuleConfiguration",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(privateViews:maxWindowCapturingLevel:enableCapturingPerformanceLogging:preferredStatusBarStyle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnbluMobileCoBrowsingModuleConfiguration",
+                "printedName": "UnbluMobileCoBrowsingModule.UnbluMobileCoBrowsingModuleConfiguration",
+                "usr": "s:27UnbluMobileCoBrowsingModule0abcdE13ConfigurationV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Set",
+                "printedName": "Swift.Set<Swift.Int>",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sh"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Level",
+                "printedName": "UIKit.UIWindow.Level",
+                "hasDefaultArg": true,
+                "usr": "c:@T@UIWindowLevel"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIStatusBarStyle",
+                "printedName": "UIKit.UIStatusBarStyle",
+                "hasDefaultArg": true,
+                "usr": "c:@E@UIStatusBarStyle"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:27UnbluMobileCoBrowsingModule0abcdE13ConfigurationV12privateViews23maxWindowCapturingLevel06enableK18PerformanceLogging23preferredStatusBarStyleACShySiG_So08UIWindowL0aSbSo08UIStatusrS0Vtcfc",
+            "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE13ConfigurationV12privateViews23maxWindowCapturingLevel06enableK18PerformanceLogging23preferredStatusBarStyleACShySiG_So08UIWindowL0aSbSo08UIStatusrS0Vtcfc",
+            "moduleName": "UnbluMobileCoBrowsingModule",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:27UnbluMobileCoBrowsingModule0abcdE13ConfigurationV",
+        "mangledName": "$s27UnbluMobileCoBrowsingModule0abcdE13ConfigurationV",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "WebKit",
+        "printedName": "WebKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UnbluCoreSDK",
+        "printedName": "UnbluCoreSDK",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "UnbluMobileCoBrowsingModule"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/TouchEventListener.swift",
+      "kind": "IntegerLiteral",
+      "offset": 288,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchType.swift",
+      "kind": "StringLiteral",
+      "offset": 245,
+      "length": 13,
+      "value": "\"TOUCH_START\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchType.swift",
+      "kind": "StringLiteral",
+      "offset": 280,
+      "length": 12,
+      "value": "\"TOUCH_MOVE\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchType.swift",
+      "kind": "StringLiteral",
+      "offset": 313,
+      "length": 11,
+      "value": "\"TOUCH_END\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchType.swift",
+      "kind": "StringLiteral",
+      "offset": 245,
+      "length": 13,
+      "value": "\"TOUCH_START\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchType.swift",
+      "kind": "StringLiteral",
+      "offset": 280,
+      "length": 12,
+      "value": "\"TOUCH_MOVE\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchType.swift",
+      "kind": "StringLiteral",
+      "offset": 313,
+      "length": 11,
+      "value": "\"TOUCH_END\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/TouchEventHandler.swift",
+      "kind": "StringLiteral",
+      "offset": 209,
+      "length": 17,
+      "value": "\"UnbluMobileCoBrowsingModule.TouchEventHandler\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchEventStub.swift",
+      "kind": "IntegerLiteral",
+      "offset": 294,
+      "length": 2,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/model\/DeviceTouchEventStub.swift",
+      "kind": "IntegerLiteral",
+      "offset": 317,
+      "length": 2,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "StringLiteral",
+      "offset": 1043,
+      "length": 20,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "StringLiteral",
+      "offset": 1050,
+      "length": 1,
+      "value": "\"#Performance\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "FloatLiteral",
+      "offset": 1158,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "FloatLiteral",
+      "offset": 1221,
+      "length": 3,
+      "value": "0.8"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "FloatLiteral",
+      "offset": 1275,
+      "length": 3,
+      "value": "5.0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1327,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1385,
+      "length": 3,
+      "value": "128"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "FloatLiteral",
+      "offset": 1522,
+      "length": 3,
+      "value": "0.1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1588,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1647,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1706,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "StringLiteral",
+      "offset": 1927,
+      "length": 12,
+      "value": "\"Cobrowsing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "StringLiteral",
+      "offset": 2375,
+      "length": 69,
+      "value": "\"com.unblu.unblu-cobrowsing-module.internal.ScreenCapturer.workQueue\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2664,
+      "length": 2,
+      "value": "17"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2711,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "StringLiteral",
+      "offset": 30078,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 30162,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/ScreenCapturer.swift",
+      "kind": "BooleanLiteral",
+      "offset": 30251,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1677,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1737,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1772,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 1920,
+      "length": 10,
+      "value": "\"TOP_LEFT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 1958,
+      "length": 13,
+      "value": "\"BOTTOM_LEFT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 1997,
+      "length": 11,
+      "value": "\"TOP_RIGHT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 2037,
+      "length": 14,
+      "value": "\"BOTTOM_RIGHT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 1920,
+      "length": 10,
+      "value": "\"TOP_LEFT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 1958,
+      "length": 13,
+      "value": "\"BOTTOM_LEFT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 1997,
+      "length": 11,
+      "value": "\"TOP_RIGHT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 2037,
+      "length": 14,
+      "value": "\"BOTTOM_RIGHT\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2084,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2173,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2210,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2243,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2501,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2539,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 2564,
+      "length": 19,
+      "value": "\"Stop co-browsing?\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 2613,
+      "length": 4,
+      "value": "\"Ok\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/IndicatorProperties.swift",
+      "kind": "StringLiteral",
+      "offset": 2646,
+      "length": 8,
+      "value": "\"Return\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 299,
+      "length": 13,
+      "value": "\"MarkerEvent\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 349,
+      "length": 9,
+      "value": "\"isPoint\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 392,
+      "length": 6,
+      "value": "\"posX\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 432,
+      "length": 6,
+      "value": "\"posY\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 472,
+      "length": 7,
+      "value": "\"width\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 514,
+      "length": 8,
+      "value": "\"height\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 560,
+      "length": 10,
+      "value": "\"markerId\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/misc\/Constants.swift",
+      "kind": "StringLiteral",
+      "offset": 604,
+      "length": 7,
+      "value": "\"color\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/UnbluMobileCoBrowsingModuleConfiguration.swift",
+      "kind": "Array",
+      "offset": 1433,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/UnbluMobileCoBrowsingModuleConfiguration.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1562,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 543,
+      "length": 20,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 550,
+      "length": 1,
+      "value": "\"#Performance\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 606,
+      "length": 9,
+      "value": "\"1100011\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "IntegerLiteral",
+      "offset": 797,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "BooleanLiteral",
+      "offset": 826,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 930,
+      "length": 29,
+      "value": "\"deviceCobrowsingOverlayText\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 1024,
+      "length": 29,
+      "value": "\"mobileCoBrowsingDialogTitle\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 1124,
+      "length": 40,
+      "value": "\"mobileCoBrowsingButtonDialogActionStop\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 1237,
+      "length": 42,
+      "value": "\"mobileCoBrowsingButtonDialogActionCancel\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 1353,
+      "length": 43,
+      "value": "\"mobileCoBrowsingButtonDialogActionConfirm\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2158,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23521,
+      "length": 22,
+      "value": "\"UnbluCapturingModule\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23521,
+      "length": 22,
+      "value": "\"UnbluCapturingModule\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23617,
+      "length": 12,
+      "value": "\"touchEvent\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23617,
+      "length": 12,
+      "value": "\"touchEvent\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23723,
+      "length": 15,
+      "value": "\"captureScreen\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23765,
+      "length": 16,
+      "value": "\"pauseCapturing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23811,
+      "length": 19,
+      "value": "\"continueCapturing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23856,
+      "length": 15,
+      "value": "\"stopCapturing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23723,
+      "length": 15,
+      "value": "\"captureScreen\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23765,
+      "length": 16,
+      "value": "\"pauseCapturing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23811,
+      "length": 19,
+      "value": "\"continueCapturing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 23856,
+      "length": 15,
+      "value": "\"stopCapturing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 24306,
+      "length": 13,
+      "value": "\"MarkerEvent\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModule.swift",
+      "kind": "StringLiteral",
+      "offset": 24306,
+      "length": 13,
+      "value": "\"MarkerEvent\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/FloatingButton.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1173,
+      "length": 2,
+      "value": "56"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/indicator\/FloatingButton.swift",
+      "kind": "StringLiteral",
+      "offset": 1093,
+      "length": 14,
+      "value": "\"UnbluMobileCoBrowsingModule.FloatingButton\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModuleModel.swift",
+      "kind": "StringLiteral",
+      "offset": 321,
+      "length": 11,
+      "value": "\"Capturing\""
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/MobileCoBrowsingModuleModel.swift",
+      "kind": "Dictionary",
+      "offset": 664,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/jenkins\/workspace\/workspace\/omponents_mobile_sdk-ios_develop\/UnbluMobileCoBrowsingModule\/com.unblu.unblu-mobile-cobrowsing-module\/internal\/WindowManager.swift",
+      "kind": "StringLiteral",
+      "offset": 2978,
+      "length": 25,
+      "value": "\"UnbluMobileCoBrowsingModule.MarkerEventViewController\""
+    }
+  ]
+}

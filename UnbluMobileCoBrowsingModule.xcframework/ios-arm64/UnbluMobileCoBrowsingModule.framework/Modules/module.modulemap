@@ -1,0 +1,11 @@
+framework module UnbluMobileCoBrowsingModule {
+  umbrella header "UnbluMobileCoBrowsingModule.h"
+
+  export *
+  module * { export * }
+}
+
+module UnbluMobileCoBrowsingModule.Swift {
+  header "UnbluMobileCoBrowsingModule-Swift.h"
+  requires objc
+}

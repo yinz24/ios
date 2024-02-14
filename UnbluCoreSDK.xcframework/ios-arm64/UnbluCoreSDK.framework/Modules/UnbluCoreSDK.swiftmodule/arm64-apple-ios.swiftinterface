@@ -1,0 +1,1320 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name UnbluCoreSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFAudio
+import AVFoundation
+import AVKit
+import Combine
+import CryptoKit
+import Foundation
+import NaturalLanguage
+import Swift
+import UIKit
+@_exported import UnbluCoreSDK
+import UserNotifications
+import WebKit
+import _Concurrency
+import _StringProcessing
+import os.log
+import os
+public protocol WebViewJsPayload {
+  var callId: Swift.String { get }
+}
+public struct UnbluWebViewEventPayload : UnbluCoreSDK.WebViewJsPayload {
+  public let callId: Swift.String
+  public let module: UnbluCoreSDK.UnbluModuleIdentifierName
+  public let webViewEvent: Swift.String
+  public let rawData: Foundation.Data
+  public let data: Any?
+}
+public struct UnbluNativeFunctionPayload : UnbluCoreSDK.WebViewJsPayload {
+  public let callId: Swift.String
+  public let functionName: UnbluCoreSDK.UnbluNativeFunctionName
+  public let data: Foundation.Data
+  public let args: [Any]?
+}
+public protocol UnbluCallModuleDelegate : AnyObject {
+  func unbluCallModuleDidStartCall(_ unbluCallModuleApi: UnbluCoreSDK.UnbluCallModuleApi)
+  func unbluCallModuleDidEndCall(_ unbluCallModuleApi: UnbluCoreSDK.UnbluCallModuleApi)
+}
+extension UnbluCoreSDK.UnbluCallModuleDelegate {
+  public func unbluCallModuleDidStartCall(_ unbluCallModuleApi: UnbluCoreSDK.UnbluCallModuleApi)
+  public func unbluCallModuleDidEndCall(_ unbluCallModuleApi: UnbluCoreSDK.UnbluCallModuleApi)
+}
+extension Foundation.NSNotification.Name {
+  public static let unbluDidRejectIncomingCall: Foundation.Notification.Name
+}
+public enum UnbluStartVideoCallError : Swift.Error {
+  case clientNotInitialized
+  case uiWasNeverShown
+  case failedToStartVideoCall(errorType: UnbluCoreSDK.UnbluStartVideoCallErrorType, details: Swift.String?)
+}
+public protocol UnbluAgentClientDelegate : UnbluCoreSDK.UnbluClientDelegate {
+}
+public enum UnbluStartAudioCallErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol UnbluExternalLinkHandler : AnyObject {
+  func decidePolicy(for url: Foundation.URL) -> UnbluCoreSDK.UnbluExternalLinkHandlingPolicy
+}
+@_hasMissingDesignatedInitializers public class RootParticipant {
+  @objc deinit
+}
+public struct UnbluAuthenticationChallengePolicy {
+  public init(certificates: [UnbluCoreSDK.UnbluAuthenticationChallengeCertificate])
+}
+@_hasMissingDesignatedInitializers public class Utils {
+  public static let screenResolutionInPoints: CoreFoundation.CGSize
+  public static let screenResolutionInPixel: CoreFoundation.CGSize
+  public static func escapePlusInQueryParams(urlComponents: inout Foundation.URLComponents)
+  public static func executeOnMain(_ block: @escaping () -> Swift.Void)
+  public static func prefferedFont(withTextStyle textStyle: UIKit.UIFont.TextStyle, traits: UIKit.UIFontDescriptor.SymbolicTraits) -> UIKit.UIFont
+  @objc deinit
+}
+public struct EventDataStub<T> : Swift.Codable where T : Swift.Decodable, T : Swift.Encodable {
+  public let module: UnbluCoreSDK.UnbluModuleIdentifierName
+  public let name: UnbluCoreSDK.UnbluNativeEventName
+  public let data: T?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public class MobileCoBrowsingPermissionsStub {
+  public static let INVALID: UnbluCoreSDK.MobileCoBrowsingPermissionsStub
+  final public let enableMobileCoBrowsingIndicatorButton: Swift.Bool
+  final public let enableMobileCoBrowsingFrame: Swift.Bool
+  public init(enableMobileCoBrowsingIndicatorButton: Swift.Bool, enableMobileCoBrowsingFrame: Swift.Bool)
+  @objc deinit
+}
+public enum UnbluOpenConversationOverviewError : Swift.Error {
+  case clientNotInitialized
+  case uiWasNeverShown
+  case failedToOpenConversationOverview(errorType: UnbluCoreSDK.UnbluOpenConversationOverviewErrorType, details: Swift.String?)
+}
+public struct UnbluLocalNotification {
+  public let identifier: Swift.String
+  public let title: Swift.String
+  public let body: Swift.String
+  public let threadId: Swift.String
+  public let sound: UserNotifications.UNNotificationSound
+  public let callId: Swift.String?
+  public init(identifier: Swift.String, title: Swift.String, body: Swift.String, threadId: Swift.String, sound: UserNotifications.UNNotificationSound, callId: Swift.String?)
+}
+public protocol InternalUnbluCallModuleBridge {
+  var isCallActive: Swift.Bool { get }
+}
+@_hasMissingDesignatedInitializers public class PersonInfo {
+  final public let id: Swift.String
+  final public let displayName: Swift.String
+  @objc deinit
+}
+extension UnbluCoreSDK.PersonInfo : Swift.Equatable {
+  public static func == (lhs: UnbluCoreSDK.PersonInfo, rhs: UnbluCoreSDK.PersonInfo) -> Swift.Bool
+  public func isEmpty() -> Swift.Bool
+}
+public struct Unblu {
+  public static func createVisitorClient(withConfiguration config: UnbluCoreSDK.UnbluClientConfiguration) -> UnbluCoreSDK.UnbluVisitorClient
+  public static func createAgentClient(withConfiguration config: UnbluCoreSDK.UnbluClientConfiguration) -> UnbluCoreSDK.UnbluAgentClient
+}
+public protocol UnbluClient : AnyObject {
+  var view: UnbluCoreSDK.UnbluView { get }
+  var enableDebugOutput: Swift.Bool { get set }
+  var logLevel: UnbluCoreSDK.LogLevel { get set }
+  var preventScrollingByKeyboard: Swift.Bool { get set }
+  var customLoadingViewCreator: UnbluCoreSDK.UnbluCustomLoadingViewCreator? { get set }
+  var namedArea: Swift.String? { get set }
+  var customCookies: Swift.Set<UnbluCoreSDK.UnbluCookie> { get set }
+  var openConversation: UnbluCoreSDK.UnbluConversation? { get }
+  var unreadMessagesCount: Swift.Int { get }
+  func start(_ completion: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluClientInitializeError>) -> Swift.Void)
+  func start(with conversationId: Swift.String, _ completion: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluClientInitializeError>, Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluOpenConversationError>) -> Swift.Void)
+  func stop(_ completion: ((Swift.Result<Swift.Void, UnbluCoreSDK.UnbluDeinitializeError>) -> Swift.Void)?)
+  func isInitialized(success: @escaping (Swift.Bool) -> Swift.Void)
+  func isInErrorState(success: @escaping (Swift.Bool) -> Swift.Void)
+  func openConversation(_ conversationId: Swift.String, onComplete: @escaping (Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluOpenConversationError>) -> Swift.Void)
+  func openConversationOverview(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluOpenConversationOverviewError>) -> Swift.Void)
+  func getPersonInfo(onComplete: @escaping (Swift.Result<UnbluCoreSDK.PersonInfo, UnbluCoreSDK.UnbluRetrievePersonInfoError>) -> Swift.Void)
+  func setOAuthToken(token: Swift.String)
+}
+extension UnbluCoreSDK.UnbluClient {
+  public func stop()
+}
+public protocol UnbluVisitorClient : UnbluCoreSDK.UnbluClient {
+  var visitorDelegate: UnbluCoreSDK.UnbluVisitorClientDelegate? { get set }
+  var conversationInterceptor: UnbluCoreSDK.UnbluConversationInterceptor? { get set }
+  func startNewConversation(conversationType: UnbluCoreSDK.ConversationType, customVisitorData: Swift.String?, conversationRecipient: UnbluCoreSDK.ConversationRecipient?, onComplete: @escaping (Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluInitConversationError>) -> Swift.Void)
+  func joinConversation(pin: Swift.String, onComplete: @escaping (Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluInitConversationError>) -> Swift.Void)
+  func isAgentAvailable(onComplete: @escaping (Swift.Result<Swift.Bool, UnbluCoreSDK.UnbluClientNotInitializedError>) -> Swift.Void)
+}
+public protocol UnbluAgentClient : UnbluCoreSDK.UnbluClient {
+  var agentDelegate: UnbluCoreSDK.UnbluAgentClientDelegate? { get set }
+}
+public enum UnbluNotificationTag : Swift.String {
+  case queue
+  case message
+  case call
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum UnbluStopMobileCoBrowsingError : Swift.Error {
+  case clientNotInitialized
+  case uiWasNeverShown
+  case unsupportedCollaborationServerVersion
+  case failedToStopMobileCoBrowsing(errorType: UnbluCoreSDK.UnbluStopMobileCoBrowsingErrorType, details: Swift.String?)
+}
+public struct UnbluUIApplication {
+  public static var activeWindowScenes: [UIKit.UIWindowScene] {
+    get
+  }
+  public static var activeKeyWindowScene: UIKit.UIWindowScene? {
+    get
+  }
+}
+public enum AudioOutputDevice : Swift.String {
+  case earpiece
+  case speaker
+  case bluetooth
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MobileCameraResolution : Swift.String {
+  case LOW
+  case MEDIUM
+  case HIGH
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol UnbluCustomLoadingViewCreator {
+  func createLoadingView(size: CoreFoundation.CGSize) -> UIKit.UIView
+}
+public enum UnbluOpenConversationError : Swift.Error {
+  case clientNotInitialized
+  case uiWasNeverShown
+  case failedToOpenConversation(errorType: UnbluCoreSDK.UnbluOpenConversationErrorType, details: Swift.String?)
+}
+public protocol InternalUnbluConfigurableModule : UnbluCoreSDK.InternalUnbluModule {
+  func getConfiguration(_ config: UnbluCoreSDK.DeviceConfigurationStub.Builder) -> UnbluCoreSDK.DeviceConfigurationStub.Builder?
+  func onConfigurationChange(_ config: UnbluCoreSDK.DeviceConfigurationStub)
+  func onTextPropertyChange(_ textProperties: [Swift.String : Any])
+}
+extension UnbluCoreSDK.InternalUnbluConfigurableModule {
+  public func getConfiguration(_ config: UnbluCoreSDK.DeviceConfigurationStub.Builder) -> UnbluCoreSDK.DeviceConfigurationStub.Builder?
+  public func onConfigurationChange(_ config: UnbluCoreSDK.DeviceConfigurationStub)
+  public func onTextPropertyChange(_ textProperties: [Swift.String : Any])
+}
+public protocol UnbluVisitorClientDelegate : UnbluCoreSDK.UnbluClientDelegate {
+  func unblu(didUpdateAgentAvailability isAvailable: Swift.Bool)
+}
+extension UnbluCoreSDK.UnbluVisitorClientDelegate {
+  public func unblu(didUpdateAgentAvailability isAvailable: Swift.Bool)
+}
+@objc @_hasMissingDesignatedInitializers public class UnbluNotificationApi : ObjectiveC.NSObject, UnbluCoreSDK.UnbluNotificationApiProtocol {
+  public var preferencesStorage: UnbluCoreSDK.UnbluPreferencesStorage? {
+    get
+    set(v)
+  }
+  public static let instance: UnbluCoreSDK.UnbluNotificationApi
+  public static var pushKitEnabled: Swift.Bool
+  public var deviceToken: Swift.String? {
+    get
+    set
+  }
+  public var automaticHandlingEnabled: Swift.Bool {
+    get
+    set
+  }
+  final public let keychainPreferencesStorage: UnbluCoreSDK.UnbluKeychainPreferencesStorage
+  public var rescheduleDecryptedNotifications: Swift.Bool
+  @objc deinit
+  public func failedToRegisterForRemoteNotifications(error: Swift.Error)
+  public func handleLaunchNotification(userInfo: [Swift.AnyHashable : Any]?, withCompletionHandler completionHandler: (() -> Swift.Void)? = nil) throws
+  public func handleRemoteNotification(userInfo: [Swift.AnyHashable : Any]) throws
+  public func handleRemoteNotification(userInfo: [Swift.AnyHashable : Any], withCompletionHandler completionHandler: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void) throws
+  public func willPresent(notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void) throws
+  public func didReceive(notificationResponse: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void) throws
+}
+extension UnbluCoreSDK.UnbluNotificationApi {
+  public func reportCall(fromLocal notification: UnbluCoreSDK.UnbluLocalNotification)
+  public func showCallUI(callId: Swift.String, conversationId: Swift.String, caller: Swift.String?, callType: Swift.String?)
+  public func hideCallUI(callId: Swift.String)
+  public static func preHeatAudioSession(isBuiltSpeaker: Swift.Bool, text: Swift.String)
+}
+extension UnbluCoreSDK.UnbluNotificationApi {
+  public func pushRegistry(token: Swift.String)
+  public func pushRegistryInvalidate()
+  public func pushRegistry(payload: [Swift.AnyHashable : Any], completion: @escaping () -> Swift.Void)
+  public func provider(answerCallUUID: Foundation.UUID)
+  public func provider(endCallUUID: Foundation.UUID)
+  public func providerDidReset()
+}
+extension UnbluCoreSDK.UnbluNotificationApi : AVFAudio.AVSpeechSynthesizerDelegate {
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didFinish utterance: AVFAudio.AVSpeechUtterance)
+  @objc dynamic public func speechSynthesizer(_ synthesizer: AVFAudio.AVSpeechSynthesizer, didCancel utterance: AVFAudio.AVSpeechUtterance)
+}
+extension UnbluCoreSDK.UnbluNotificationApi {
+  public static func isUnbluNotification(userInfo: [Swift.AnyHashable : Any]) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers public class UnbluEncryptedNotificationServiceHelper {
+  public static let KEY_ENCRYPTED_DATA: Swift.String
+  public static func decode(_ encryptedData: Swift.String) -> [Swift.String : Any]?
+  @objc deinit
+}
+public struct UnbluAuthenticationChallengeCertificate {
+  public enum CertificateType {
+    case pem
+    case der
+    public static func == (a: UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.CertificateType, b: UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.CertificateType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum ChallengeCertificateError : Swift.Error {
+    case unableToDecodePublicKeyFromData
+    case publicKeyIsEmpty
+    case unableToGetUrlForResource
+    case unsupportedCertificateType
+    public static func == (a: UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.ChallengeCertificateError, b: UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.ChallengeCertificateError) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(name: Swift.String, extension: Swift.String, in bundle: Foundation.Bundle = .main) throws
+  public init(type: UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.CertificateType, data: Foundation.Data) throws
+  public init(type: UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.CertificateType, publicKey: Swift.String) throws
+}
+public protocol InternalUnbluMobileCoBrowsingModuleBridge {
+  var isCoBrowsingActive: Swift.Bool { get }
+}
+public enum UnbluNoActiveConversationErrorType : Swift.Error {
+  case noActiveConversation
+  public static func == (a: UnbluCoreSDK.UnbluNoActiveConversationErrorType, b: UnbluCoreSDK.UnbluNoActiveConversationErrorType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class UserDefaultsPreferencesStorage : UnbluCoreSDK.UnbluPreferencesStorage {
+  public init()
+  public func put(key: Swift.String, value: Swift.String?)
+  public func get(key: Swift.String) -> Swift.String?
+  @objc deinit
+}
+public protocol InternalUnbluModule : AnyObject {
+  var capabilities: [Swift.String] { get }
+  func configure(_ coreSdkBridge: UnbluCoreSDK.CoreSdkModuleBridge)
+  func destroy()
+  func onWebViewCrash()
+}
+public protocol UnbluView : UIKit.UIView {
+  func didAppear()
+  func didDisappear()
+}
+@_hasMissingDesignatedInitializers public class ResourceHelper {
+  public static let shared: UnbluCoreSDK.ResourceHelper
+  public var bundle: Foundation.Bundle {
+    get
+  }
+  @objc deinit
+}
+public struct UnbluClientConfiguration {
+  public enum Error : Swift.Error {
+    case moduleAlreadyRegistered
+    case moduleNotRegistered
+    public static func == (a: UnbluCoreSDK.UnbluClientConfiguration.Error, b: UnbluCoreSDK.UnbluClientConfiguration.Error) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public struct AccessToken {
+    public enum TokenType : Swift.String {
+      case JWT
+      public init?(rawValue: Swift.String)
+      public typealias RawValue = Swift.String
+      public var rawValue: Swift.String {
+        get
+      }
+    }
+    public init(token: Swift.String, type: UnbluCoreSDK.UnbluClientConfiguration.AccessToken.TokenType)
+  }
+  public let unbluBaseUrl: Swift.String
+  public var ouathToken: Swift.String?
+  public let apiKey: Swift.String
+  public let preferencesStorage: UnbluCoreSDK.UnbluPreferencesStorage
+  public let fileDownloadHandler: UnbluCoreSDK.UnbluFileDownloadHandler
+  public var entryPath: Swift.String?
+  public var internalUrlPatternWhitelist: [Foundation.NSRegularExpression]
+  public let externalLinkHandler: UnbluCoreSDK.UnbluExternalLinkHandler
+  public var customCookies: Swift.Set<UnbluCoreSDK.UnbluCookie>
+  public var accessToken: UnbluCoreSDK.UnbluClientConfiguration.AccessToken?
+  public var language: Swift.String?
+  public var namedArea: Swift.String?
+  public var hiddenUiWindowConfiguration: UnbluCoreSDK.UnbluHiddenUIWindowConfiguration
+  public var authenticationChallengeDelegate: UnbluCoreSDK.AuthenticationChallengeDelegate?
+  public var unbluNotificationInterceptor: UnbluCoreSDK.UnbluNotificationInterceptor?
+  public static var callKitProviderIconResourceName: Swift.String?
+  public enum PushNotificationVersion : Swift.Int {
+    case NotEncrypted
+    case Encrypted
+    case EncryptedService
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public var unbluPushNotificationVersion: UnbluCoreSDK.UnbluClientConfiguration.PushNotificationVersion
+  public var modules: [UnbluCoreSDK.UnbluModule] {
+    get
+  }
+  public init(unbluBaseUrl: Swift.String, apiKey: Swift.String, preferencesStorage: UnbluCoreSDK.UnbluPreferencesStorage, fileDownloadHandler: UnbluCoreSDK.UnbluFileDownloadHandler, externalLinkHandler: UnbluCoreSDK.UnbluExternalLinkHandler)
+  public mutating func register(module: UnbluCoreSDK.UnbluModule) throws
+  public mutating func unregister(module: UnbluCoreSDK.UnbluModule) throws
+}
+public enum ConversationRecipientType : Swift.String, Swift.Codable {
+  case agent
+  case team
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias UnbluModuleIdentifierName = Swift.String
+public typealias UnbluNativeFunctionName = Swift.String
+public typealias UnbluNativeEventName = Swift.String
+public protocol UnbluModule : AnyObject {
+  var hashValue: Swift.Int { get }
+}
+public protocol InternalUnbluConversationInteractableModule : AnyObject {
+  var conversationModule: UnbluCoreSDK.ConversationModuleProtocol? { get set }
+}
+public class DeviceResolutionStub {
+  public static let INVALID: UnbluCoreSDK.DeviceResolutionStub
+  final public let x: Swift.Int
+  final public let y: Swift.Int
+  public init(x: Swift.Int, y: Swift.Int)
+  public func toJson() -> [Swift.String : Any]
+  public static func parseJson(_ json: [Swift.String : Any]) -> UnbluCoreSDK.DeviceResolutionStub
+  public func isValid() -> Swift.Bool
+  @objc deinit
+}
+public class MobileCoBrowsingIndicatorConfigurationStub {
+  public static let INVALID: UnbluCoreSDK.MobileCoBrowsingIndicatorConfigurationStub
+  final public let mobileCoBrowsingFrameWidth: Swift.Int
+  final public let mobileCoBrowsingFrameColor: UnbluCoreSDK.DeviceColorStub
+  final public let mobileCoBrowsingIndicatorButtonIconColor: UnbluCoreSDK.DeviceColorStub
+  final public let mobileCoBrowsingIndicatorButtonBackgroundColor: UnbluCoreSDK.DeviceColorStub
+  final public let mobileCoBrowsingIndicatorButtonBorderColor: UnbluCoreSDK.DeviceColorStub
+  final public let mobileCoBrowsingIndicatorButtonShadowColor: UnbluCoreSDK.DeviceColorStub
+  final public let mobileCoBrowsingIndicatorButtonShadowSize: Swift.Int
+  final public let mobileCoBrowsingIndicatorButtonInitialPosition: Swift.String
+  final public let mobileCoBrowsingIndicatorButtonInitialHorizontalMargin: Swift.Int
+  final public let mobileCoBrowsingIndicatorButtonInitialVerticalMargin: Swift.Int
+  final public let mobileCoBrowsingFrameShadowColor: UnbluCoreSDK.DeviceColorStub
+  final public let mobileCoBrowsingFrameShadowSize: Swift.Int
+  public init(mobileCoBrowsingFrameWidth: Swift.Int, mobileCoBrowsingFrameColor: UnbluCoreSDK.DeviceColorStub, mobileCoBrowsingIndicatorButtonIconColor: UnbluCoreSDK.DeviceColorStub, mobileCoBrowsingIndicatorButtonBackgroundColor: UnbluCoreSDK.DeviceColorStub, mobileCoBrowsingIndicatorButtonBorderColor: UnbluCoreSDK.DeviceColorStub, mobileCoBrowsingIndicatorButtonShadowColor: UnbluCoreSDK.DeviceColorStub, mobileCoBrowsingIndicatorButtonShadowSize: Swift.Int, mobileCoBrowsingIndicatorButtonInitialPosition: Swift.String, mobileCoBrowsingIndicatorButtonInitialHorizontalMargin: Swift.Int, mobileCoBrowsingIndicatorButtonInitialVerticalMargin: Swift.Int, mobileCoBrowsingFrameShadowColor: UnbluCoreSDK.DeviceColorStub, mobileCoBrowsingFrameShadowSize: Swift.Int)
+  @objc deinit
+}
+public struct CustomConversationActionInvocation : UnbluCoreSDK.CustomActionInvocationData {
+  public var invocationId: Swift.String
+  public var key: Swift.String
+  public var conversationId: Swift.String
+  public var invokingPersonId: Swift.String
+  public var invokingPersonDisplayName: Swift.String
+  public var invocationTimestamp: Swift.Int64
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CustomMessageActionInvocation : UnbluCoreSDK.CustomActionInvocationData {
+  public var invocationId: Swift.String
+  public var key: Swift.String
+  public var conversationId: Swift.String
+  public var invokingPersonId: Swift.String
+  public var invokingPersonDisplayName: Swift.String
+  public var invocationTimestamp: Swift.Int64
+  public var targetMessageId: Swift.String
+  public var targetMessageType: Swift.String
+  public var targetMessageText: Swift.String
+  public var targetMessageSenderPersonId: Swift.String
+  public var targetMessageSenderPersonDisplayName: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct CustomPersonActionInvocation : UnbluCoreSDK.CustomActionInvocationData {
+  public var invocationId: Swift.String
+  public var key: Swift.String
+  public var conversationId: Swift.String
+  public var invokingPersonId: Swift.String
+  public var invokingPersonDisplayName: Swift.String
+  public var invocationTimestamp: Swift.Int64
+  public var targetPersonId: Swift.String
+  public var targetPersonDisplayName: Swift.String
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol CustomActionInvocationData : Swift.Decodable, Swift.Encodable {
+  var invocationId: Swift.String { get set }
+  var key: Swift.String { get set }
+  var conversationId: Swift.String { get set }
+  var invokingPersonId: Swift.String { get set }
+  var invokingPersonDisplayName: Swift.String { get set }
+  var invocationTimestamp: Swift.Int64 { get set }
+  func toString() -> Swift.String
+}
+extension UnbluCoreSDK.CustomActionInvocationData {
+  public func toString() -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class PersonActivityInfo {
+  final public let lastActivity: Swift.Int64
+  @objc deinit
+}
+extension UnbluCoreSDK.PersonActivityInfo : Swift.Equatable {
+  public static func == (lhs: UnbluCoreSDK.PersonActivityInfo, rhs: UnbluCoreSDK.PersonActivityInfo) -> Swift.Bool
+}
+extension Foundation.URLSession {
+  public static func unbluUrlSession(file: Swift.String = "", password: Swift.String = "") -> Foundation.URLSession
+}
+public struct UnbluCookie : Swift.Equatable, Swift.Hashable {
+  public init(name: Swift.String, value: Swift.String, expiryDate: Foundation.Date? = nil)
+  public init(httpCookie: Foundation.HTTPCookie)
+  public static func == (a: UnbluCoreSDK.UnbluCookie, b: UnbluCoreSDK.UnbluCookie) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct LayerInfo : Swift.Equatable {
+  public let id: Swift.String
+  public var isActiveMobileCoBrowsingLayer: Swift.Bool {
+    get
+  }
+  public static func == (a: UnbluCoreSDK.LayerInfo, b: UnbluCoreSDK.LayerInfo) -> Swift.Bool
+}
+public enum UnbluRetrieveOpenConversationIdError : Swift.Error {
+  case clientNotInitialized
+  case uiWasNeverShown
+  public static func == (a: UnbluCoreSDK.UnbluRetrieveOpenConversationIdError, b: UnbluCoreSDK.UnbluRetrieveOpenConversationIdError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum UnbluStopMobileCoBrowsingErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class UnbluDefaultFileDownloadHandler : ObjectiveC.NSObject, UnbluCoreSDK.UnbluFileDownloadHandlerWithAuthorizationToken {
+  public func downloadFile(atUrl url: Foundation.URL, cookies: [Foundation.HTTPCookie], token: Swift.String)
+  public func downloadFile(atUrl url: Foundation.URL, cookies: [Foundation.HTTPCookie])
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol UnbluCallKitApi {
+  init()
+  func isEnabled() -> Swift.Bool
+  func registerForPushKit()
+  func newCXProvider(_ iconName: Swift.String?)
+  func reportNewIncomingCall(callId: Foundation.UUID, handlerName: Swift.String, callType: Swift.String, _ completion: @escaping (Swift.Error?) -> Swift.Void)
+  func reportUnsuccessfulCall(_ uuid: Foundation.UUID, _ completion: @escaping () -> Swift.Void)
+  func endIncomingCall(with call: Foundation.UUID, _ unanswered: Swift.Bool)
+  func isCallKitSupported() -> Swift.Bool
+}
+public enum UnbluClientNotInitializedError : Swift.Error {
+  case clientNotInitialized
+  public static func == (a: UnbluCoreSDK.UnbluClientNotInitializedError, b: UnbluCoreSDK.UnbluClientNotInitializedError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum UnbluIsMobileCoBrowsingActiveError : Swift.Error {
+  case unsupportedCollaborationServerVersion
+  public static func == (a: UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError, b: UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @objc public class UnbluCoreApi : ObjectiveC.NSObject {
+  weak public var visitorDelegate: UnbluCoreSDK.UnbluVisitorClientDelegate?
+  weak public var agentDelegate: UnbluCoreSDK.UnbluAgentClientDelegate?
+  @objc deinit
+  public func setOAuthToken(token: Swift.String)
+}
+extension UnbluCoreSDK.UnbluCoreApi : UnbluCoreSDK.UnbluVisitorClient {
+  public var conversationInterceptor: UnbluCoreSDK.UnbluConversationInterceptor? {
+    get
+    set
+  }
+  public func startNewConversation(conversationType: UnbluCoreSDK.ConversationType, customVisitorData: Swift.String?, conversationRecipient: UnbluCoreSDK.ConversationRecipient?, onComplete: @escaping (Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluInitConversationError>) -> Swift.Void)
+  public func joinConversation(pin: Swift.String, onComplete: @escaping (Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluInitConversationError>) -> Swift.Void)
+  public func isAgentAvailable(onComplete: @escaping (Swift.Result<Swift.Bool, UnbluCoreSDK.UnbluClientNotInitializedError>) -> Swift.Void)
+  public func activateVisitorSession(completion: @escaping () -> Swift.Void)
+}
+extension UnbluCoreSDK.UnbluCoreApi : UnbluCoreSDK.UnbluAgentClient {
+}
+extension UnbluCoreSDK.UnbluCoreApi {
+  public var view: UnbluCoreSDK.UnbluView {
+    get
+  }
+  public var openConversation: UnbluCoreSDK.UnbluConversation? {
+    get
+  }
+  public var unreadMessagesCount: Swift.Int {
+    get
+  }
+  public var enableDebugOutput: Swift.Bool {
+    get
+    set
+  }
+  public var logLevel: UnbluCoreSDK.LogLevel {
+    get
+    set
+  }
+  public var preventScrollingByKeyboard: Swift.Bool {
+    get
+    set
+  }
+  public var customLoadingViewCreator: UnbluCoreSDK.UnbluCustomLoadingViewCreator? {
+    get
+    set
+  }
+  public var namedArea: Swift.String? {
+    get
+    set
+  }
+  public var customCookies: Swift.Set<UnbluCoreSDK.UnbluCookie> {
+    get
+    set
+  }
+  public func start(_ completion: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluClientInitializeError>) -> Swift.Void)
+  public func start(with conversationId: Swift.String, _ completion: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluClientInitializeError>, Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluOpenConversationError>) -> Swift.Void)
+  public func stop(_ completion: ((Swift.Result<Swift.Void, UnbluCoreSDK.UnbluDeinitializeError>) -> Swift.Void)?)
+  public func isInitialized(success: @escaping (Swift.Bool) -> Swift.Void)
+  public func isInErrorState(success: @escaping (Swift.Bool) -> Swift.Void)
+  public func acceptCall(_ withAudio: Swift.Bool, _ withVideo: Swift.Bool, onComplete: @escaping (Swift.Result<Swift.Bool, UnbluCoreSDK.UnbluNoActiveConversationErrorType>) -> Swift.Void)
+  public func declineCall(onComplete: @escaping (Swift.Result<Swift.Bool, UnbluCoreSDK.UnbluNoActiveConversationErrorType>) -> Swift.Void)
+  public func openConversation(_ conversationId: Swift.String, onComplete: @escaping (Swift.Result<UnbluCoreSDK.UnbluConversation, UnbluCoreSDK.UnbluOpenConversationError>) -> Swift.Void)
+  public func openConversationOverview(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluOpenConversationOverviewError>) -> Swift.Void)
+  public func getPersonInfo(onComplete: @escaping (Swift.Result<UnbluCoreSDK.PersonInfo, UnbluCoreSDK.UnbluRetrievePersonInfoError>) -> Swift.Void)
+}
+extension UnbluCoreSDK.UnbluCoreApi {
+  public func isInitializedInternal() -> Swift.Bool
+}
+@objc public enum ConversationType : Swift.Int, Swift.CaseIterable {
+  case chatRequest
+  case offlineChatRequest
+  case videoRequest
+  case audioRequest
+  case mobileCobrowsingRequest
+  case universalCobrowsingRequest
+  case visitorCobrowsing
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [UnbluCoreSDK.ConversationType]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [UnbluCoreSDK.ConversationType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum UnbluInitConversationErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CoreSdkModuleBridgeEvent {
+  case didUpdateLayers([UnbluCoreSDK.LayerInfo])
+  case didUpdateClientState(UnbluCoreSDK.UnbluApiState)
+  case didChangeUiVisibility(Swift.Bool)
+}
+@objc public enum UnbluUiHideRequestReason : Swift.Int {
+  case mobileCoBrowsingStarting
+  case other
+  case requestedByUser
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct UnbluServerInfo {
+  public var jsApiMajorVersion: Swift.Int {
+    get
+  }
+}
+public protocol ConversationModuleProtocol : AnyObject {
+  var openConversationId: Swift.String? { get }
+  var layerInfos: [UnbluCoreSDK.LayerInfo] { get }
+  var conversationParticipantsPublisher: Combine.AnyPublisher<(Swift.String, [UnbluCoreSDK.ConversationParticipant]), Swift.Never> { get }
+  typealias OpenConversationErrorCallback = (UnbluCoreSDK.UnbluOpenConversationErrorType, Swift.String?) -> Swift.Void
+  func openConversation(conversationId: Swift.String, success: @escaping () -> Swift.Void, failure: @escaping Self.OpenConversationErrorCallback)
+  typealias OpenConversationOverviewErrorCallback = (UnbluCoreSDK.UnbluOpenConversationOverviewErrorType, Swift.String?) -> Swift.Void
+  func openConversationOverview(success: @escaping () -> Swift.Void, failure: @escaping Self.OpenConversationOverviewErrorCallback)
+  typealias StartAudioCallErrorCallback = (UnbluCoreSDK.UnbluStartAudioCallErrorType, Swift.String?) -> Swift.Void
+  func startAudioCall(conversationId: Swift.String, success: @escaping () -> Swift.Void, failure: @escaping Self.StartAudioCallErrorCallback)
+  typealias StartVideoCallErrorCallback = (UnbluCoreSDK.UnbluStartVideoCallErrorType, Swift.String?) -> Swift.Void
+  func startVideoCall(conversationId: Swift.String, success: @escaping () -> Swift.Void, failure: @escaping Self.StartVideoCallErrorCallback)
+  typealias SwitchLayerErrorCallback = (UnbluCoreSDK.UnbluSwitchLayerErrorType, Swift.String?) -> Swift.Void
+  func switchLayer(layerId: Swift.String, success: @escaping () -> Swift.Void, failure: @escaping Self.SwitchLayerErrorCallback)
+  typealias StopLayerErrorCallback = (UnbluCoreSDK.UnbluStopLayerErrorType, Swift.String?) -> Swift.Void
+  func stopLayer(layerId: Swift.String, success: @escaping () -> Swift.Void, failure: @escaping Self.StopLayerErrorCallback)
+  typealias AcceptCallErrorCallback = (UnbluCoreSDK.UnbluNoActiveConversationErrorType, Swift.String?) -> Swift.Void
+  func acceptCall(withAudio: Swift.Bool, withVideo: Swift.Bool, success: @escaping () -> Swift.Void, failure: @escaping Self.AcceptCallErrorCallback)
+  typealias DeclineCallErrorCallback = (UnbluCoreSDK.UnbluNoActiveConversationErrorType, Swift.String?) -> Swift.Void
+  func declineCall(success: @escaping () -> Swift.Void, failure: @escaping Self.DeclineCallErrorCallback)
+}
+@_hasMissingDesignatedInitializers public class UnbluAuthenticationChallengeHandler {
+  public static func isPkcs12Configuration() -> Swift.Bool
+  convenience public init(data: [UnbluCoreSDK.UnbluAuthenticationChallengeCertificate])
+  convenience public init(policies: [Swift.String : UnbluCoreSDK.UnbluAuthenticationChallengePolicy])
+  convenience public init(policies: [Swift.String : UnbluCoreSDK.UnbluAuthenticationChallengePolicy], pkcs12FileName: Swift.String = "", pkcs12Password: Swift.String = "")
+  convenience public init(pkcs12FileName: Swift.String, pkcs12Password: Swift.String)
+  @objc deinit
+}
+extension UnbluCoreSDK.UnbluAuthenticationChallengeHandler : UnbluCoreSDK.AuthenticationChallengeDelegate {
+  public func didReceive(authenticationChallenge challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+public enum UnbluExternalLinkHandlingPolicy {
+  case open
+  case block
+  case ignore
+  public static func == (a: UnbluCoreSDK.UnbluExternalLinkHandlingPolicy, b: UnbluCoreSDK.UnbluExternalLinkHandlingPolicy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol UnbluPreferencesStorage {
+  func put(key: Swift.String, value: Swift.String?)
+  func get(key: Swift.String) -> Swift.String?
+}
+public protocol UnbluConversation : AnyObject {
+  var id: Swift.String { get }
+  var isOpen: Swift.Bool { get }
+  func open(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluConversationError>) -> Swift.Void)
+  func close(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluConversationError>) -> Swift.Void)
+  var isCallActive: Swift.Bool { get }
+  var isCallUiOpen: Swift.Bool { get }
+  func startAudioCall(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluConversationError>) -> Swift.Void)
+  func startVideoCall(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluConversationError>) -> Swift.Void)
+  var isMobileCoBrowsingActive: Swift.Bool { get }
+  func startMobileCoBrowsing(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluConversationError>) -> Swift.Void)
+  func stopMobileCoBrowsing(onComplete: @escaping (Swift.Result<Swift.Void, UnbluCoreSDK.UnbluConversationError>) -> Swift.Void)
+}
+public enum UnbluKeychainAccessControl {
+  case whenUnlocked(thisDeviceOnly: Swift.Bool)
+  case afterFirstUnlock(thisDeviceOnly: Swift.Bool)
+  case currentBiometrySet
+  case whenPasscodeSetThisDeviceOnly
+}
+public enum UnbluStartAudioCallError : Swift.Error {
+  case clientNotInitialized
+  case uiWasNeverShown
+  case failedToStartAudioCall(errorType: UnbluCoreSDK.UnbluStartAudioCallErrorType, details: Swift.String?)
+}
+@_hasMissingDesignatedInitializers public class RemoteCallParticipant : UnbluCoreSDK.RootParticipant {
+  @objc deinit
+}
+public enum UnbluStopLayerErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol UnbluClientDelegate : AnyObject {
+  func unbluDidInitialize()
+  func unbluDidDeinitialize()
+  func unbluUiIsReady()
+  func unbluDidPreloadUi()
+  func unblu(didTransitionUiWithTransition transition: UnbluCoreSDK.UnbluUiVisibilityTransition)
+  func unblu(didUpdateUnreadMessages count: Swift.Int)
+  func unblu(didUpdatePersonInfo personInfo: UnbluCoreSDK.PersonInfo)
+  func unblu(didUpdatePersonActivityInfo personActivity: UnbluCoreSDK.PersonActivityInfo)
+  func unblu(didChangeOpenConversation openConversation: UnbluCoreSDK.UnbluConversation?)
+  func unblu(didRequestHideUi reason: UnbluCoreSDK.UnbluUiHideRequestReason, conversationId: Swift.String?)
+  func unblu(didRequestShowUi reason: UnbluCoreSDK.UnbluUiRequestReason, requestedByUser: Swift.Bool)
+  func unblu(didToggleCallUi isOpen: Swift.Bool)
+  func unblu(didReceiveError type: UnbluCoreSDK.UnbluClientErrorType, description: Swift.String)
+  func unblu(onCustomConversationActionInvocation invocation: UnbluCoreSDK.CustomConversationActionInvocation)
+  func unblu(onCustomMessageActionInvocation invocation: UnbluCoreSDK.CustomMessageActionInvocation)
+  func unblu(onCustomPersonActionInvocation invocation: UnbluCoreSDK.CustomPersonActionInvocation)
+}
+extension UnbluCoreSDK.UnbluClientDelegate {
+  public func unbluDidInitialize()
+  public func unbluDidDeinitialize()
+  public func unbluUiIsReady()
+  public func unbluDidPreloadUi()
+  public func unblu(didTransitionUiWithTransition transition: UnbluCoreSDK.UnbluUiVisibilityTransition)
+  public func unblu(didUpdateUnreadMessages count: Swift.Int)
+  public func unblu(didUpdatePersonInfo personInfo: UnbluCoreSDK.PersonInfo)
+  public func unblu(didChangeOpenConversation openConversation: UnbluCoreSDK.UnbluConversation?)
+  public func unblu(didRequestHideUi reason: UnbluCoreSDK.UnbluUiHideRequestReason, conversationId: Swift.String?)
+  public func unblu(didRequestShowUi reason: UnbluCoreSDK.UnbluUiRequestReason, requestedByUser: Swift.Bool)
+  public func unblu(didToggleCallUi isOpen: Swift.Bool)
+  public func unblu(didReceiveError type: UnbluCoreSDK.UnbluClientErrorType, description: Swift.String)
+  public func unblu(onCustomConversationActionInvocation action: UnbluCoreSDK.CustomConversationActionInvocation)
+  public func unblu(onCustomMessageActionInvocation action: UnbluCoreSDK.CustomMessageActionInvocation)
+  public func unblu(onCustomPersonActionInvocation action: UnbluCoreSDK.CustomPersonActionInvocation)
+}
+extension Foundation.NSNotification.Name {
+  public static let unbluDidRequestShowUi: Foundation.Notification.Name
+}
+public protocol UnbluNotificationApiProtocol : AnyObject {
+  var deviceToken: Swift.String? { get set }
+  var automaticHandlingEnabled: Swift.Bool { get set }
+  func handleLaunchNotification(userInfo: [Swift.AnyHashable : Any]?, withCompletionHandler completionHandler: (() -> Swift.Void)?) throws
+  func handleRemoteNotification(userInfo: [Swift.AnyHashable : Any]) throws
+  func handleRemoteNotification(userInfo: [Swift.AnyHashable : Any], withCompletionHandler completionHandler: @escaping (UIKit.UIBackgroundFetchResult) -> Swift.Void) throws
+  func failedToRegisterForRemoteNotifications(error: Swift.Error)
+}
+public enum UnbluInitConversationError : Swift.Error {
+  case clientNotInitialized
+  case failedToInitConversation(errorType: UnbluCoreSDK.UnbluInitConversationErrorType, details: Swift.String?)
+  case failedToOpenConversation(errorType: UnbluCoreSDK.UnbluOpenConversationErrorType, details: Swift.String?)
+}
+public enum UnbluRetrievePersonInfoError : Swift.Error {
+  case clientNotInitialized
+  case unsupportedCollaborationServerVersion
+  public static func == (a: UnbluCoreSDK.UnbluRetrievePersonInfoError, b: UnbluCoreSDK.UnbluRetrievePersonInfoError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum UnbluApiState : Swift.String {
+  case initialize
+  case ready
+  case error
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Logger {
+  public typealias LoggerFunction = () -> Swift.String
+  public static func v(tag: Swift.String, message: () -> Swift.String, _ additionalInfo: UnbluCoreSDK.Logger.LoggerFunction? = nil, error: Swift.Error? = nil)
+  public static func d(tag: Swift.String, message: () -> Swift.String, _ additionalInfo: UnbluCoreSDK.Logger.LoggerFunction? = nil, error: Swift.Error? = nil)
+  public static func i(tag: Swift.String, message: () -> Swift.String, _ additionalInfo: UnbluCoreSDK.Logger.LoggerFunction? = nil, error: Swift.Error? = nil)
+  public static func w(tag: Swift.String, message: () -> Swift.String, _ additionalInfo: UnbluCoreSDK.Logger.LoggerFunction? = nil, error: Swift.Error? = nil)
+  public static func e(tag: Swift.String, message: () -> Swift.String, _ additionalInfo: UnbluCoreSDK.Logger.LoggerFunction? = nil, error: Swift.Error? = nil)
+  public static func log(withLevel logLevel: UnbluCoreSDK.LogLevel = .debug, tag: Swift.String, message: () -> Swift.String, _ additionalInfo: UnbluCoreSDK.Logger.LoggerFunction? = nil, error: Swift.Error? = nil)
+  @objc deinit
+}
+public struct VideoCallColors {
+  public var backgroundColor: UIKit.UIColor?
+  public var nameLabelBackgroundColor: UIKit.UIColor?
+  public var nameLabelTextColor: UIKit.UIColor?
+  public var audioMeterColor: UIKit.UIColor?
+}
+public enum UnbluDeinitializeError : Swift.Error {
+  case deinitFailed(details: Swift.String?)
+}
+@_hasMissingDesignatedInitializers public class DeviceApiVersionStub {
+  public static let INVALID: UnbluCoreSDK.DeviceApiVersionStub
+  final public let major: Swift.Int
+  final public let minor: Swift.Int
+  @objc deinit
+}
+public protocol AuthenticationChallengeDelegate {
+  func didReceive(authenticationChallenge challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+public class UnbluDefaultExternalLinkHandler : UnbluCoreSDK.UnbluExternalLinkHandler {
+  public var externalLinkPatternWhitelist: [Foundation.NSRegularExpression]
+  public init()
+  public func decidePolicy(for url: Foundation.URL) -> UnbluCoreSDK.UnbluExternalLinkHandlingPolicy
+  @objc deinit
+}
+public enum UnbluClientErrorType : Swift.String {
+  case internalError
+  case serverUnreachable
+  case disabled
+  case unknownFunction
+  case invalidFunctionArgs
+  case missingApiKey
+  case unsupportedVersion
+  case invalidUrl
+  case authentication
+  case authorization
+  case execution
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol CoreSdkModuleBridge : AnyObject {
+  var isUnbluInitialized: Swift.Bool { get }
+  var serverInfo: UnbluCoreSDK.UnbluServerInfo { get }
+  var isCallUiOpen: Swift.Bool { get }
+  var didCreateWebView: Combine.AnyPublisher<WebKit.WKWebView, Swift.Never> { get }
+  var webViewDidCallNativeFunction: Combine.AnyPublisher<UnbluCoreSDK.UnbluNativeFunctionPayload, Swift.Never> { get }
+  var eventSubject: Combine.AnyPublisher<UnbluCoreSDK.CoreSdkModuleBridgeEvent, Swift.Never> { get }
+  var videoCallColors: Combine.AnyPublisher<UnbluCoreSDK.VideoCallColors, Swift.Never> { get }
+  func exposeFunctionToWebView(named: UnbluCoreSDK.UnbluNativeFunctionName)
+  func reportSuccess(for payload: UnbluCoreSDK.WebViewJsPayload, data: Any?)
+  func reportFailure(for payload: UnbluCoreSDK.WebViewJsPayload, error: UnbluCoreSDK.EApiFunctionError)
+  func sendDataToWebView(_ data: Foundation.Data)
+  func sendCalKiitShowUI(callId: Swift.String, conversationId: Swift.String, caller: Swift.String?, callType: Swift.String?)
+  func sendCalKiitHideUI(callId: Swift.String)
+  func webViewEventPublisher(forModule module: UnbluCoreSDK.UnbluModuleIdentifierName) -> Combine.AnyPublisher<UnbluCoreSDK.UnbluWebViewEventPayload, Swift.Never>
+  func addViewToMainView(_ view: UIKit.UIView)
+  func bringSubviewToFront(_ view: UIKit.UIView)
+}
+extension UnbluCoreSDK.CoreSdkModuleBridge {
+  public func sendDataToWebView(forEvent event: UnbluCoreSDK.UnbluNativeEventName, fromModule module: UnbluCoreSDK.UnbluModuleIdentifierName)
+  public func sendDataToWebView<T>(data: T, forEvent event: UnbluCoreSDK.UnbluNativeEventName, fromModule module: UnbluCoreSDK.UnbluModuleIdentifierName) where T : Swift.Decodable, T : Swift.Encodable
+  public func reportSuccess(for payload: UnbluCoreSDK.WebViewJsPayload)
+  public func sendCallKiitShowUIToNotificationModule(callId: Swift.String, conversationId: Swift.String, caller: Swift.String?, callType: Swift.String?)
+  public func sendCallKiitHideUIToNotificationModule(callId: Swift.String)
+}
+public protocol UnbluFileDownloadHandler {
+  func downloadFile(atUrl url: Foundation.URL, cookies: [Foundation.HTTPCookie])
+}
+public protocol UnbluFileDownloadHandlerWithAuthorizationToken : UnbluCoreSDK.UnbluFileDownloadHandler {
+  func downloadFile(atUrl url: Foundation.URL, cookies: [Foundation.HTTPCookie], token: Swift.String)
+}
+public protocol BaseWebRtcProvider {
+  init(_: UnbluCoreSDK.CallModuleDelegate)
+  func disconnect()
+  func initPublisher(video: Swift.Bool, audio: Swift.Bool, name: Swift.String, cameraRes: Swift.String)
+  func connectToSession(_ sessionToken: Swift.String) -> Swift.Bool
+  func publishLocalStreamToSession()
+  func unpublishLocalStreamFromSession()
+  func subscribeToStream(streamId: Swift.String) -> Swift.Bool
+  func newVideoView() -> UIKit.UIView?
+  func cycleVideo() -> Swift.Bool
+  func publishAudio(enabled: Swift.Bool)
+  func publishVideo(enabled: Swift.Bool)
+  func attachVideoTrackToView(participantId: Swift.String, num: Swift.Int, videoView: inout UIKit.UIView?)
+}
+public protocol OpenTokWebRtcProvider : UnbluCoreSDK.BaseWebRtcProvider {
+  func initSession(payload: Swift.AnyObject) -> Swift.Bool
+}
+public protocol TestWebRtcProvider : UnbluCoreSDK.BaseWebRtcProvider {
+  func initSession(payload: Swift.AnyObject) -> Swift.Bool
+}
+public protocol LiveKitWebRtcProvider : UnbluCoreSDK.BaseWebRtcProvider {
+  func initSession(serverUrl: Swift.String) -> Swift.Bool
+  func changeBackround(enabled: Swift.Bool)
+  func setPinParticipant(participantId: Swift.String, videoView: inout UIKit.UIView?)
+  func setParticipantDisconnected(participantId: Swift.String)
+  func publishScreen(enabled: Swift.Bool)
+}
+@objc public enum UnbluUiRequestReason : Swift.Int {
+  case newMessages
+  case incomingCall
+  case other
+  case missedCall
+  case declineCall
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum UnbluClientInitializeError : Swift.Error {
+  case inErrorState
+  case initFailed(errorType: UnbluCoreSDK.UnbluClientErrorType, details: Swift.String?)
+}
+public struct UnbluCallModuleProvider {
+  public static func create() -> UnbluCoreSDK.UnbluCallModuleApi
+}
+public protocol UnbluCallModuleApi : UnbluCoreSDK.UnbluModule {
+  var delegate: UnbluCoreSDK.UnbluCallModuleDelegate? { get set }
+  func isCallActive(success: @escaping ((Swift.Bool) -> Swift.Void), failure: ((UnbluCoreSDK.UnbluClientNotInitializedError) -> Swift.Void)?)
+}
+public protocol UnbluNotificationInterceptor {
+  func transform(unbluLocalNotification: UnbluCoreSDK.UnbluLocalNotification) -> UnbluCoreSDK.UnbluLocalNotification?
+}
+public enum UnbluSwitchLayerErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc public enum LogLevel : Swift.Int {
+  case verbose
+  case debug
+  case info
+  case warn
+  case error
+  case none
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum UnbluConversationError : Swift.Error {
+  case failedToCloseConversation(Swift.String)
+  case failedToOpenConversation(Swift.String)
+  case failedToStartAudioCall(Swift.String)
+  case failedToStartVideoCall(Swift.String)
+  case failedToStartCoBrowsing(Swift.String)
+  case failedToStopCoBrowsing(Swift.String)
+}
+public protocol UnbluConversationInterceptor {
+  func conversationIsPreparing(withType conversationType: UnbluCoreSDK.ConversationType, customVisitorData: Swift.String?, onComplete: @escaping (Swift.String?) -> Swift.Void)
+}
+public protocol UnbluConversationInterceptorWithRecipient : UnbluCoreSDK.UnbluConversationInterceptor {
+  func conversationIsPreparing(withType conversationType: UnbluCoreSDK.ConversationType, customVisitorData: Swift.String?, conversationRecipient: UnbluCoreSDK.ConversationRecipient?, onComplete: @escaping (Swift.String?, UnbluCoreSDK.ConversationRecipient?) -> Swift.Void)
+}
+extension UnbluCoreSDK.UnbluConversationInterceptor {
+  public func conversationIsPreparing(withType conversationType: UnbluCoreSDK.ConversationType, customVisitorData: Swift.String?, conversationRecipient: UnbluCoreSDK.ConversationRecipient?, onComplete: @escaping (Swift.String?) -> Swift.Void)
+}
+extension UnbluCoreSDK.UnbluConversationInterceptorWithRecipient {
+  public func conversationIsPreparing(withType conversationType: UnbluCoreSDK.ConversationType, customVisitorData: Swift.String?, onComplete: @escaping (Swift.String?) -> Swift.Void)
+}
+public protocol CallModuleDelegate {
+  var audioOutputDevice: UnbluCoreSDK.AudioOutputDevice { get }
+  func didSessionConnected()
+  func didSessionDisconnected()
+  func didParticipantAvailable(participantId: Swift.String, active: Swift.Bool)
+  func didPublisherAudioAvailable(participantId: Swift.String, trackId: Swift.String?, published: Swift.Bool)
+  func didPublisherVideoAvailable(participantId: Swift.String, trackId: Swift.String?, published: Swift.Bool)
+  func switchAudioOutputMode(_ outputDevice: UnbluCoreSDK.AudioOutputDevice)
+  func didRemoteAudioAvailable(participantId: Swift.String, trackId: Swift.String?, published: Swift.Bool, video: Swift.Bool)
+  func didRemoteVideoAvailable(participantId: Swift.String, trackId: Swift.String?, published: Swift.Bool, audio: Swift.Bool)
+  func didRemoteStreamDropped(trackId: Swift.String?, video: Swift.Bool, audio: Swift.Bool)
+  func didSpeaking(participantId: Swift.String, level: Swift.Float)
+  func didMute(participantId: Swift.String, trackId: Swift.String, muted: Swift.Bool, video: Swift.Bool)
+  func didTapPinUnpinButton(participant: UnbluCoreSDK.RemoteCallParticipant, selected: Swift.Bool)
+  func didRequestAddViewToMainView(videoView: UIKit.UIView)
+  func emitAudioPublishedChanged(published: Swift.Bool)
+  func emitVideoPublishedChanged(published: Swift.Bool)
+  func emitAudioOutputChanged()
+  func emitStreamPublishStateChanged(trackId: Swift.String, audio: Swift.Bool, video: Swift.Bool)
+  func drawParticipant(participantId: Swift.String, audio: Swift.Bool, video: Swift.Bool)
+  func qualityConnectionChanged(participantId: Swift.String, level: Swift.Int)
+  func setVideoAreaWaitingIndicator(enable: Swift.Bool)
+}
+public protocol CallModuleLocalDelegate : UnbluCoreSDK.CallModuleDelegate {
+  func newVideoView() -> UIKit.UIView?
+  func getNumRemoteParticipants() -> Swift.Int
+  func isCallUiOpen() -> Swift.Bool
+}
+public protocol HashableAndObject : AnyObject, Swift.Hashable {
+}
+extension UIKit.UIView : UnbluCoreSDK.HashableAndObject {
+}
+public class Weak<T> : Swift.Hashable where T : UnbluCoreSDK.HashableAndObject {
+  public var hashValue: Swift.Int
+  weak public var value: T?
+  public init(_ value: T)
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (lhs: UnbluCoreSDK.Weak<T>, rhs: UnbluCoreSDK.Weak<T>) -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @objc public class DeviceConfigurationStub : ObjectiveC.NSObject {
+  final public let version: UnbluCoreSDK.DeviceApiVersionStub
+  final public let cookieNamePrefix: Swift.String?
+  final public let deviceIdentifier: Swift.String?
+  final public let maxResolution: UnbluCoreSDK.DeviceResolutionStub
+  final public let compressionQuality: UnbluCoreSDK.DeviceCompressionQualityStub
+  final public let maxFpsRate: Swift.Double
+  final public let isDoCreateTiles: Swift.Bool
+  final public let maxPixelPerTileSide: Swift.Int
+  final public let secureFieldBackgroundColor: UnbluCoreSDK.DeviceColorStub
+  final public let secureFieldBorderColor: UnbluCoreSDK.DeviceColorStub
+  final public let loadingViewBackgroundColor: UnbluCoreSDK.DeviceColorStub
+  final public let loadingViewBubbleColor: UnbluCoreSDK.DeviceColorStub
+  final public let webViewHeaderBackgroundColor: UnbluCoreSDK.DeviceColorStub
+  final public let videoCallBackgroundColor: UnbluCoreSDK.DeviceColorStub
+  final public let videoCallLabelBackgroundColor: UnbluCoreSDK.DeviceColorStub
+  final public let videoCallLabelForegroundColor: UnbluCoreSDK.DeviceColorStub
+  final public let videoCallAudioMeterColor: UnbluCoreSDK.DeviceColorStub
+  final public let downloadsEnabled: Swift.Bool
+  final public let mobileCoBrowsingPermissions: UnbluCoreSDK.MobileCoBrowsingPermissionsStub
+  final public let mobileCoBrowsingIndicatorConfiguration: UnbluCoreSDK.MobileCoBrowsingIndicatorConfigurationStub
+  final public let enableVonageIpWhitelist: Swift.Bool
+  @_inheritsConvenienceInitializers @objc public class Builder : ObjectiveC.NSObject {
+    @discardableResult
+    public func setMobileCoBrowsingIndicator(_ mobileCoBrowsingIndicator: UnbluCoreSDK.MobileCoBrowsingIndicatorConfigurationStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setVersion(_ version: UnbluCoreSDK.DeviceApiVersionStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setCookieNamePrefix(_ cookieNamePrefix: Swift.String?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setDeviceIdentifier(_ deviceIdentifier: Swift.String?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setMaxResolution(_ maxResolution: UnbluCoreSDK.DeviceResolutionStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setCompressionQuality(_ compressionQuality: UnbluCoreSDK.DeviceCompressionQualityStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setMaxFpsRate(_ maxFpsRate: Swift.Double?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setDoCreateTiles(_ doCreateTiles: Swift.Bool?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setMaxPixelPerTileSide(_ maxPixelPerTileSide: Swift.Int?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setSecureFieldBackgroundColor(_ secureFieldBackgroundColor: UnbluCoreSDK.DeviceColorStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setSecureFieldBorderColor(_ secureFieldBorderColor: UnbluCoreSDK.DeviceColorStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setLoadingViewBackgroundColor(_ loadingViewBackgroundColor: UnbluCoreSDK.DeviceColorStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setLoadingViewBubbleColor(_ loadingViewBubbleColor: UnbluCoreSDK.DeviceColorStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setDownloadsEnabled(_ downloadsEnabled: Swift.Bool?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setWebViewHeaderBackgroundColor(_ webViewHeaderBackgroundColor: UnbluCoreSDK.DeviceColorStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setMobileCoBrowsingIndicatorPermissions(_ mobileCoBrowsingPermissions: UnbluCoreSDK.MobileCoBrowsingPermissionsStub?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    @discardableResult
+    public func setEnableVonageIpWhitelist(_ enableVonageIpWhitelist: Swift.Bool?) -> UnbluCoreSDK.DeviceConfigurationStub.Builder
+    public func build() -> UnbluCoreSDK.DeviceConfigurationStub
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc deinit
+}
+public class DeviceCompressionQualityStub {
+  public static let INVALID: UnbluCoreSDK.DeviceCompressionQualityStub
+  final public let minRate: Swift.Float
+  final public let maxRate: Swift.Float
+  public init(minRate: Swift.Float, maxRate: Swift.Float)
+  public func isValid() -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DeviceInformationStub {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class UnbluNotificationCenterDelegate : ObjectiveC.NSObject, UserNotifications.UNUserNotificationCenterDelegate {
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, didReceive response: UserNotifications.UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void)
+  @objc public func userNotificationCenter(_ center: UserNotifications.UNUserNotificationCenter, willPresent notification: UserNotifications.UNNotification, withCompletionHandler completionHandler: @escaping (UserNotifications.UNNotificationPresentationOptions) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct ConversationRecipient : Swift.Codable, Swift.Equatable {
+  public let id: Swift.String
+  public let type: UnbluCoreSDK.ConversationRecipientType
+  public init(id: Swift.String, type: UnbluCoreSDK.ConversationRecipientType)
+  public func toJson() -> Swift.String?
+  public static func == (a: UnbluCoreSDK.ConversationRecipient, b: UnbluCoreSDK.ConversationRecipient) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum UnbluNotificationProcessingError : Swift.Error, Foundation.LocalizedError {
+  case notForUnblu
+  case unableToProcessKey(Swift.String)
+  case unsupportedType(Swift.String)
+  case unsupportedCallState(Swift.String)
+  case unsupportedCallType(Swift.String)
+  case unsupportedNotificationVersion(Swift.String)
+  case noData
+  public var localizedDescription: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class DeviceColorStub {
+  public static let INVALID: UnbluCoreSDK.DeviceColorStub
+  final public let r: Swift.Int
+  final public let g: Swift.Int
+  final public let b: Swift.Int
+  final public let a: CoreFoundation.CGFloat
+  public func toJson() -> [Swift.String : Any]
+  public static func parseJson(_ json: [Swift.String : Any]) -> UnbluCoreSDK.DeviceColorStub
+  public func isValid() -> Swift.Bool
+  public func toUIColor() -> UIKit.UIColor
+  public static func fromUIColor(_ color: UIKit.UIColor) -> UnbluCoreSDK.DeviceColorStub
+  @objc deinit
+}
+public enum UnbluOpenConversationErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ConversationParticipant : Swift.Decodable, Swift.Equatable {
+  public let id: Swift.String
+  public let displayName: Swift.String
+  public let nameInitials: Swift.String
+  public let avatarUrl: Swift.String?
+  public var avatarBackgroundColor: UIKit.UIColor? {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public static func == (a: UnbluCoreSDK.ConversationParticipant, b: UnbluCoreSDK.ConversationParticipant) -> Swift.Bool
+}
+public enum UnbluStartVideoCallErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public class UnbluKeychainPreferencesStorage : UnbluCoreSDK.UnbluPreferencesStorage {
+  public var sharedGroupName: Swift.String? {
+    get
+    set
+  }
+  public init(accessControl: UnbluCoreSDK.UnbluKeychainAccessControl, shared: Swift.Bool? = false)
+  public func put(key: Swift.String, value: Swift.String?)
+  public func get(key: Swift.String) -> Swift.String?
+  @objc deinit
+}
+public class UnbluHiddenUIWindowConfiguration {
+  public var windowLevel: UIKit.UIWindow.Level {
+    get
+    set
+  }
+  public init()
+  @objc deinit
+}
+@objc public enum UnbluUiVisibilityTransition : Swift.Int {
+  case fadeIn
+  case fadedIn
+  case fadeOut
+  case fadedOut
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum UnbluOpenConversationOverviewErrorType : Swift.String {
+  case fatalError
+  case unexpectedExecutionError
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum EApiFunctionError : Swift.Error {
+  case requestedFunctionNotUnbluApi(message: WebKit.WKScriptMessage)
+  case jsonSerializationFailed(errorMsg: Swift.String)
+  case unknownUnbluApiFunction(handlerName: Swift.String)
+  case illegalState(moduleName: Swift.String, functionName: Swift.String, message: Swift.String)
+  case invalidArgument(moduleName: Swift.String, functionName: Swift.String, argName: Swift.String, argValue: Swift.String?)
+  case invalidArguments(moduleName: Swift.String, functionName: Swift.String, args: [Any]?)
+  case invalidEventData(moduleName: Swift.String, eventName: Swift.String, _: Any?)
+  case invalidResponseCallMissingCallId(args: [Any]?)
+  case invalidResponseCallNoCallbackFound(callId: Swift.String, args: [Any]?)
+  case notYetImplemented(handlerName: Swift.String)
+  case rejected(reason: Swift.String?)
+  case unknownUnbluApiEvent(moduleName: Swift.String, eventName: Swift.String)
+}
+extension UnbluCoreSDK.UnbluStartAudioCallErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluStartAudioCallErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluStartAudioCallErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluNotificationTag : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluNotificationTag : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluNotificationTag : Swift.RawRepresentable {}
+extension UnbluCoreSDK.AudioOutputDevice : Swift.Equatable {}
+extension UnbluCoreSDK.AudioOutputDevice : Swift.Hashable {}
+extension UnbluCoreSDK.AudioOutputDevice : Swift.RawRepresentable {}
+extension UnbluCoreSDK.MobileCameraResolution : Swift.Equatable {}
+extension UnbluCoreSDK.MobileCameraResolution : Swift.Hashable {}
+extension UnbluCoreSDK.MobileCameraResolution : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.CertificateType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.CertificateType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.ChallengeCertificateError : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluAuthenticationChallengeCertificate.ChallengeCertificateError : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluNoActiveConversationErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluNoActiveConversationErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.Error : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.Error : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.AccessToken.TokenType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.AccessToken.TokenType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.AccessToken.TokenType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.PushNotificationVersion : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.PushNotificationVersion : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluClientConfiguration.PushNotificationVersion : Swift.RawRepresentable {}
+extension UnbluCoreSDK.ConversationRecipientType : Swift.Equatable {}
+extension UnbluCoreSDK.ConversationRecipientType : Swift.Hashable {}
+extension UnbluCoreSDK.ConversationRecipientType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluRetrieveOpenConversationIdError : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluRetrieveOpenConversationIdError : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluStopMobileCoBrowsingErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluStopMobileCoBrowsingErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluStopMobileCoBrowsingErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluClientNotInitializedError : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluClientNotInitializedError : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluIsMobileCoBrowsingActiveError : Swift.Hashable {}
+extension UnbluCoreSDK.ConversationType : Swift.Equatable {}
+extension UnbluCoreSDK.ConversationType : Swift.Hashable {}
+extension UnbluCoreSDK.ConversationType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluInitConversationErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluInitConversationErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluInitConversationErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluUiHideRequestReason : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluUiHideRequestReason : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluUiHideRequestReason : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluExternalLinkHandlingPolicy : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluExternalLinkHandlingPolicy : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluStopLayerErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluStopLayerErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluStopLayerErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluRetrievePersonInfoError : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluRetrievePersonInfoError : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluApiState : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluApiState : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluApiState : Swift.RawRepresentable {}
+extension UnbluCoreSDK.LogLevel : Swift.Equatable {}
+extension UnbluCoreSDK.LogLevel : Swift.Hashable {}
+extension UnbluCoreSDK.LogLevel : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluClientErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluClientErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluClientErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluUiRequestReason : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluUiRequestReason : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluUiRequestReason : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluSwitchLayerErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluSwitchLayerErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluSwitchLayerErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluOpenConversationErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluOpenConversationErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluOpenConversationErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluStartVideoCallErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluStartVideoCallErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluStartVideoCallErrorType : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluUiVisibilityTransition : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluUiVisibilityTransition : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluUiVisibilityTransition : Swift.RawRepresentable {}
+extension UnbluCoreSDK.UnbluOpenConversationOverviewErrorType : Swift.Equatable {}
+extension UnbluCoreSDK.UnbluOpenConversationOverviewErrorType : Swift.Hashable {}
+extension UnbluCoreSDK.UnbluOpenConversationOverviewErrorType : Swift.RawRepresentable {}

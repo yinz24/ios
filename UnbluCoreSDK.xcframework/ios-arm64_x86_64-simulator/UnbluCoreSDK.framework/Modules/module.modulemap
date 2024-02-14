@@ -1,0 +1,11 @@
+framework module UnbluCoreSDK {
+  umbrella header "UnbluCoreSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module UnbluCoreSDK.Swift {
+  header "UnbluCoreSDK-Swift.h"
+  requires objc
+}
